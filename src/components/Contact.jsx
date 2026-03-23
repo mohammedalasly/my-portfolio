@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react"
 import emailjs from "@emailjs/browser"
 
+const INITIAL_FORM = { name: "", email: "", message: "" }
+
 const Contact = () => {
-	const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+	const [formData, setFormData] = useState(INITIAL_FORM)
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [submitStatus, setSubmitStatus] = useState(null)
 	const [isFading, setIsFading] = useState(false)
 
 	const handleInputChange = (e) =>
-		setFormData({ ...formData, [e.target.name]: e.target.value })
+		setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
@@ -23,9 +25,8 @@ const Contact = () => {
 				formData,
 				import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 			)
-
 			setSubmitStatus("success")
-			setFormData({ name: "", email: "", message: "" })
+			setFormData(INITIAL_FORM)
 		} catch (error) {
 			console.error("EmailJS Error:", error)
 			setSubmitStatus("error")
@@ -34,7 +35,6 @@ const Contact = () => {
 		}
 	}
 
-	// Auto fade + remove status message
 	useEffect(() => {
 		if (!submitStatus) return
 
@@ -51,11 +51,11 @@ const Contact = () => {
 	}, [submitStatus])
 
 	const openGoogleCalendar = () => {
-		const link = document.createElement("a")
-		link.href = "https://calendar.app.google/fascCALtGCa6NLnQA"
-		link.target = "_blank"
-		link.rel = "noopener noreferrer"
-		link.click()
+		window.open(
+			"https://calendar.app.google/fascCALtGCa6NLnQA",
+			"_blank",
+			"noopener,noreferrer",
+		)
 	}
 
 	return (
@@ -69,10 +69,12 @@ const Contact = () => {
 			</div>
 
 			<div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
-				{/* LEFT — Schedule a call */}
+				{/* Schedule a call */}
 				<div className="lg:col-span-2 reveal-left">
-					<div className="bg-(--bg-surface) border-4 border-(--color-border) rounded 
-					neo-shadow-lg p-6 sm:p-8 h-full flex flex-col relative z-10">
+					<div
+						className="bg-(--bg-surface) border-4 border-(--color-border) rounded 
+					neo-shadow-lg p-6 sm:p-8 h-full flex flex-col relative z-10"
+					>
 						<img
 							src="./schedule.svg"
 							alt="schedule"

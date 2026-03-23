@@ -19,7 +19,7 @@ const Hero = () => {
 			{/* ── Main Content Area ── */}
 			<div className="w-full px-5 sm:px-8 md:px-12 lg:px-20">
 				<div className="flex flex-col md:flex-row md:justify-between gap-5">
-					{/* ───────── LEFT SIDE ───────── */}
+	
 					<div className="flex flex-col items-start reveal-left">
 						{/* Avatar */}
 						<div
@@ -34,7 +34,6 @@ const Hero = () => {
 						</div>
 					</div>
 
-					{/* ───────── RIGHT SIDE ───────── */}
 					<div className="flex flex-col items-start md:items-end text-left md:text-right md:mt-8 reveal">
 						{/* Name */}
 						<h1

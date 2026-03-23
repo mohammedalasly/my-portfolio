@@ -18,17 +18,17 @@ const getInitialDarkMode = () => {
 	return window.matchMedia("(prefers-color-scheme: dark)").matches
 }
 
-// Apply dark mode class immediately (before first render) to avoid flash
-const initialDark = getInitialDarkMode()
-document.documentElement.classList.toggle("dark", initialDark)
-
 const App = () => {
-	const [darkMode, setDarkMode] = useState(initialDark)
+	const [darkMode, setDarkMode] = useState(() => {
+		const initial = getInitialDarkMode()
+		document.documentElement.classList.toggle("dark", initial)
+		return initial
+	})
+
 	const activeSection = useActiveSection(SECTION_IDS)
 
 	useScrollReveal()
 
-	// Let the browser handle scroll restoration natively on refresh
 	useEffect(() => {
 		if ("scrollRestoration" in history) {
 			history.scrollRestoration = "auto"
@@ -45,7 +45,7 @@ const App = () => {
 			<Navbar
 				activeSection={activeSection}
 				darkMode={darkMode}
-				toggleDarkMode={() => setDarkMode((d) => !d)}
+				toggleDarkMode={() => setDarkMode((dark) => !dark)}
 			/>
 
 			<main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-32">

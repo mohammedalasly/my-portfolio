@@ -4,13 +4,12 @@ import { BsMoonStars, BsSunFill } from "react-icons/bs"
 import MobileMenu from "./MobileMenu"
 import { NAV_ITEMS } from "../constants.js"
 
-const scrollTo = (id) =>
+const scrollToSection = (id) =>
 	document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
 
 const Navbar = ({ activeSection, darkMode, toggleDarkMode }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-	// Use a resize observer on body instead of matchMedia to avoid flicker
 	useEffect(() => {
 		if (!isMenuOpen) return
 		const mq = window.matchMedia("(min-width: 768px)")
@@ -23,8 +22,7 @@ const Navbar = ({ activeSection, darkMode, toggleDarkMode }) => {
 
 	const handleNavClick = useCallback((id) => {
 		setIsMenuOpen(false)
-		// Small delay so the menu closes before scroll begins (avoids layout thrash)
-		requestAnimationFrame(() => scrollTo(id))
+		requestAnimationFrame(() => scrollToSection(id))
 	}, [])
 
 	return (
@@ -36,15 +34,13 @@ const Navbar = ({ activeSection, darkMode, toggleDarkMode }) => {
 				<div className="max-w-full mx-auto flex justify-between items-center">
 					{/* Logo */}
 					<button
-						onClick={() => scrollTo("home")}
+						onClick={() => scrollToSection("home")}
 						tabIndex={isMenuOpen ? -1 : 0}
 						aria-label="Scroll to top"
 						className="bg-(--bg-surface) border-2 border-(--color-border) rounded p-1 
 						neo-shadow transition-transform active:translate-y-0"
 					>
-						<span>
-							<img src="./bee.svg" alt="bee" className="w-10 h-10" />
-						</span>
+						<img src="./bee.svg" alt="bee" className="w-10 h-10" />
 					</button>
 
 					{/* Desktop Nav */}
@@ -81,7 +77,7 @@ const Navbar = ({ activeSection, darkMode, toggleDarkMode }) => {
 						</button>
 					</div>
 
-					{/* Mobile Controls */}
+					{/* Mobile */}
 					<div className="md:hidden flex space-x-2">
 						<button
 							onClick={toggleDarkMode}

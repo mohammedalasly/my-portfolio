@@ -42,12 +42,8 @@ const ProjectsGrid = () => (
 
 						<div className="flex flex-wrap gap-1.5">
 							{project.tech.map((t) => (
-								<div key={t.name} className="flex items-center">
-									<img
-										src={t.icon}
-										alt={t.name}
-										className="w-8 h-8 object-contain"
-									/>
+								<div key={t.icon} className="flex items-center">
+									<img src={t.icon} alt="" className="w-8 h-8 object-contain" />
 								</div>
 							))}
 						</div>

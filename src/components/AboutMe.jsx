@@ -1,5 +1,3 @@
-import { HiHeart, HiSparkles, HiFlag } from "react-icons/hi"
-
 const cards = [
 	{
 		id: "who",
@@ -14,8 +12,8 @@ const cards = [
 		id: "hobbies",
 		title: "Hobbies",
 		accent: "#ca6555",
-		icon: "./heart.svg",
-		alt: "heart",
+		icon: "./plane.svg",
+		alt: "plane",
 		rotate: "rotate-[0.4deg]",
 		text: "When I'm not exploring new technologies, I enjoy swimming, playing volleyball, and board games, and sharing good times with friends who bring energy and laughter into my life.",
 	},
@@ -23,8 +21,8 @@ const cards = [
 		id: "goals",
 		title: "Goals",
 		accent: "#45AAB8",
-		icon: "./goal.svg",
-		alt: "goal",
+		icon: "./award.svg",
+		alt: "award",
 		rotate: "-rotate-[0.3deg]",
 		text: "My mission is to keep learning and growing to create products that not only work well but also make a positive difference in users' lives.",
 	},
@@ -60,7 +58,8 @@ const AboutMe = () => (
 					>
 						{/* Badge */}
 						<div
-							className="absolute -top-4 right-4 z-20 px-4 py-1 rounded border-3 border-(--color-border) neo-shadow font-black uppercase tracking-tight text-sm"
+							className="absolute -top-4 right-4 z-20 px-4 py-1 rounded border-3 
+							border-(--color-border) neo-shadow font-black uppercase tracking-tight text-sm"
 							style={{ backgroundColor: card.accent, color: "#fff" }}
 						>
 							{card.title}
@@ -73,10 +72,7 @@ const AboutMe = () => (
 						/>
 
 						{/* Icon block */}
-						<div
-							className="hidden sm:flex items-center justify-center px-24 py-24 relative shrink-0"
-							
-						>
+						<div className="hidden sm:flex items-center justify-center px-24 py-24 relative shrink-0">
 							{/* Faint large SVG in background */}
 							<img
 								src={card.icon}
@@ -88,9 +84,6 @@ const AboutMe = () => (
 
 						{/* Content */}
 						<div className="flex flex-col justify-center gap-2 p-5 sm:p-7 flex-1">
-							<div className="flex items-center gap-3">
-								
-							</div>
 							<p className="text-base md:text-lg leading-relaxed font-medium opacity-75 text-(--color-typography)">
 								{card.text}
 							</p>
