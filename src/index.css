@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap");
+
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+	--color-danger: #e0715b;
+	--color-success: #6ccbb2;
+	--color-orange: #e8a368;
+
+	--color-typography: #073b4c;
+	--btn-bg: #073b4c;
+	--color-shadow: #22223b;
+	--color-border: #201703;
+	--color-project-bg: #ffffff;
+	--status-msg: #073b4c;
+
+	--bg-main: #ede3c4;
+	--bg-surface: #ffffff;
+	--inner-about-carrd-bg: #ede3c4;
+
+	--text-main: #073b4c;
+	--text-muted: #4a6572;
+}
+
+.dark {
+	--color-typography: #cacaca;
+	--color-shadow: #30363d;
+	--color-border: #30363d;
+	--color-project-bg: #161b22;
+
+	--bg-main: #0d1117;
+	--bg-surface: #161b22;
+	--inner-about-carrd-bg: #161b22;
+	--btn-bg: #c4d1d8;
+
+	--text-main: #e6edf3;
+	--text-muted: #8b949e;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+	*,
+	*::before,
+	*::after {
+		@apply m-0 p-0 box-border;
+	}
+
+	html {
+		@apply w-full h-full scroll-smooth;
+		overflow-x: clip; /* clip instead of hidden — preserves scroll restoration */
+	}
+
+	body {
+		@apply w-full h-full;
+		overflow-x: clip;
+	}
+
+	body {
+		font-family: "Public Sans", sans-serif;
+		background: var(--bg-main);
+		color: var(--text-main);
+	}
+
+	body.menu-open {
+		@apply overflow-hidden;
+	}
+
+	#root {
+		@apply min-h-screen;
+	}
+}
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+@layer components {
+	.neo-shadow {
+		box-shadow: 5px 4px 0 var(--color-shadow);
+	}
+
+	.neo-shadow-lg {
+		box-shadow: 12px 16px 0 var(--color-shadow);
+	}
+
+	.nav-link-active {
+		@apply bg-[#4f4fa0]! text-white! rounded border-[#4f4fa0]!;
+	}
+
+	.section-title {
+		@apply sm:text-5xl text-3xl md:text-6xl font-black uppercase tracking-tight text-(--color-typography)
+	}
+
+	.section-subtitle {
+		@apply text-base md:text-lg font-medium opacity-70 leading-relaxed max-w-md text-(--color-typography);
+	}
+
+	.mobile-menu-backdrop {
+		@apply fixed inset-0 bg-black/55 z-40 opacity-0 pointer-events-none transition-opacity duration-300;
+	}
+
+	.mobile-menu-backdrop.active {
+		@apply opacity-100 pointer-events-auto;
+	}
+}
+
+/* ============================================================
+   SCROLL-REVEAL ANIMATIONS
+   ============================================================ */
+.reveal {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-left {
+	opacity: 0;
+	transform: translateX(-50px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-right {
+	opacity: 0;
+	transform: translateX(50px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+	opacity: 1;
+	transform: none;
+}
+
+.reveal-stagger > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 0.25s; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 0.35s; }
+.reveal-stagger > *:nth-child(5) { transition-delay: 0.45s; }
+.reveal-stagger > *:nth-child(6) { transition-delay: 0.55s; }
+
+/* ============================================================
+   GRID BACKGROUND
+   ============================================================ */
+.grid-bg::before {
+	contain: strict;
+	content: "";
+	position: fixed;
+	will-change: transform;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image:
+		linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+	background-size: 60px 60px;
+}
+
+html.dark .grid-bg::before {
+	contain: strict;
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+/* ============================================================
+   CURSOR BLINK
+   ============================================================ */
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+.cursor-blink {
+	animation: blink 1s step-end infinite;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-thumb {
+	@apply bg-[#a7a7a7] rounded-md;
+}
+::-webkit-scrollbar-track {
+    background: #5a5858;
+}
