@@ -36,6 +36,14 @@ const Contact = () => {
 	}
 
 	useEffect(() => {
+		const icons = ["./happy.svg", "./nervous.svg"]
+		icons.forEach((src) => {
+			const img = new Image()
+			img.src = src
+		})
+	}, [])
+
+	useEffect(() => {
 		if (!submitStatus) return
 
 		const fadeTimer = setTimeout(() => setIsFading(true), 4000)

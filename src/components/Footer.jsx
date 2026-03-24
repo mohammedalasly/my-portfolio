@@ -11,20 +11,19 @@ const Footer = () => (
 					className="text-sm opacity-60 
 				text-(--color-typography)"
 				>
-					© {new Date().getFullYear()}{" "}
-					Mohammad Alasli
+					© {new Date().getFullYear()} Mohammad Alasli
 					<span>
 						{" "}
 						<img
 							src="./bee.svg"
 							alt="dolphin"
-							className="w-5 h-5 inline-block"
+							className="w-5 h-5 inline-block mb-1"
 						/>
-					</span>
-					. All rights reserved.
+					</span>{" "}
+					 All rights reserved.
 				</p>
 
-				<div className="flex items-center gap-5">
+				<div className="flex items-center gap-4">
 					<a
 						href="https://github.com/mohammedalasly"
 						aria-label="GitHub"
