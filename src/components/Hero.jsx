@@ -9,8 +9,10 @@ const Hero = () => {
 			border-b-4 border-(--color-border) rounded neo-shadow-lg reveal-right"
 			>
 				<img
-					src="cover.jpg"
+					src="/cover.jpg"
 					alt="Cover"
+					loading="eager"
+					fetchpriority="high"
 					className="w-full h-full object-cover"
 				/>
 				<div className="absolute inset-0 bg-black/30" />
@@ -26,8 +28,10 @@ const Hero = () => {
 						rounded neo-shadow-lg"
 						>
 							<img
-								src="./mo.png"
+								src="/mo.png"
 								alt="mo"
+								loading="eager"
+								fetchpriority="high"
 								className="w-40 md:w-70 h-40 md:h-70 rounded object-cover"
 							/>
 						</div>
