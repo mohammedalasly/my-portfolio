@@ -11,7 +11,8 @@ const Footer = () => (
 					className="text-sm opacity-60 
 				text-(--color-typography)"
 				>
-					© {new Date().getFullYear()} Mohammad Alasli
+					© {new Date().getFullYear()}{" "}
+					Mohammad Alasli
 					<span>
 						{" "}
 						<img
@@ -66,11 +67,27 @@ const Footer = () => (
 					className="text-sm opacity-60 
 				text-(--color-typography) lg:text-right"
 				>
-					Crafted with React.js, Tailwind CSS, and lots of
+					Crafted with React.js
+					<span>
+						<img
+							src="/react.svg"
+							alt="React"
+							className="w-5 h-5 inline-block mb-1"
+						/>
+					</span>{" "}
+					Tailwind CSS
+					<span>
+						<img
+							src="/tailwind.svg"
+							alt="Tailwind CSS"
+							className="w-5 h-5 inline-block mb-1"
+						/>
+					</span>{" "}
+					and lots of
 					<img
-						src="cup.svg"
-						alt="coffee"
-						className="w-6 h-6 inline-block ml-1 mb-2"
+						src="/coffee.svg"
+						alt="cup of coffee"
+						className="w-5 h-5 inline-block mb-2"
 					/>
 				</p>
 			</div>

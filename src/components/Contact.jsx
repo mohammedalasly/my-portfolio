@@ -78,13 +78,13 @@ const Contact = () => {
 						<img
 							src="./schedule.svg"
 							alt="schedule"
-							className="w-14 h-14 shrink-0"
+							className="w-12 h-12 shrink-0"
 						/>
 
-						<h3 className="text-2xl font-black tracking-tight text-(--color-typography) mt-5">
-							Schedule a Call
+						<h3 className="text-2xl font-bold text-(--color-typography) mt-5">
+							Schedule a call
 						</h3>
-						<p className="text-sm md:text-lg font-semibold opacity-50 text-(--color-typography) mt-1">
+						<p className="text-sm md:text-lg opacity-60 text-(--color-typography) mt-1">
 							Prefer to chat directly? Schedule a 30-minute call to discuss
 							potential opportunities and collaborations.
 						</p>
@@ -111,12 +111,12 @@ const Contact = () => {
 					className="lg:col-span-3 bg-(--bg-surface) border-4 border-(--color-border) 
 					rounded neo-shadow-lg p-6 sm:p-8 flex flex-col relative z-10 reveal-right"
 				>
-					<img src="./email.svg" alt="email" className="w-14 h-14 shrink-0" />
+					<img src="./email.svg" alt="email" className="w-12 h-12 shrink-0" />
 
-					<h3 className="text-2xl font-black tracking-tight text-(--color-typography) mt-5">
-						Send me a message
+					<h3 className="text-2xl font-bold text-(--color-typography) mt-5">
+						Send a message
 					</h3>
-					<p className="text-sm md:text-lg font-semibold opacity-50 text-(--color-typography) mt-1">
+					<p className="text-sm md:text-lg opacity-60 text-(--color-typography) mt-1">
 						Drop me a message, and I'll get back to you as soon as possible.
 					</p>
 
@@ -145,7 +145,7 @@ const Contact = () => {
 					<div className="flex flex-col gap-6 mt-6 grow">
 						<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 							<div className="space-y-2">
-								<label className="text-sm font-black uppercase tracking-widest block text-(--color-typography)">
+								<label className="text-sm font-semibold block text-(--color-typography)">
 									Full Name
 								</label>
 								<input
@@ -162,7 +162,7 @@ const Contact = () => {
 							</div>
 
 							<div className="space-y-2">
-								<label className="text-sm font-black uppercase tracking-widest block text-(--color-typography)">
+								<label className="text-sm font-semibold block text-(--color-typography)">
 									Email Address
 								</label>
 								<input
@@ -180,7 +180,7 @@ const Contact = () => {
 						</div>
 
 						<div className="flex flex-col grow space-y-2">
-							<label className="text-sm font-black uppercase tracking-widest block text-(--color-typography)">
+							<label className="text-sm font-semibold block text-(--color-typography)">
 								Your Message
 							</label>
 							<textarea

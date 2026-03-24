@@ -16,10 +16,9 @@ const Hero = () => {
 				<div className="absolute inset-0 bg-black/30" />
 			</div>
 
-			{/* ── Main Content Area ── */}
+			{/* Main Content Area */}
 			<div className="w-full px-5 sm:px-8 md:px-12 lg:px-20">
 				<div className="flex flex-col md:flex-row md:justify-between gap-5">
-	
 					<div className="flex flex-col items-start reveal-left">
 						{/* Avatar */}
 						<div
@@ -35,16 +34,13 @@ const Hero = () => {
 					</div>
 
 					<div className="flex flex-col items-start md:items-end text-left md:text-right md:mt-8 reveal">
-						{/* Name */}
 						<h1
 							className="text-5xl sm:text-5xl md:text-6xl xl:text-7xl font-black uppercase 
-						tracking-tight text-(--color-typography) leading-none"
+						tracking-tighter text-(--color-typography) leading-none"
 						>
 							Mohammad Alasli
 						</h1>
-
-						{/* Role */}
-						<p className="mt-4 text-3xl md:text-5xl uppercase font-black  text-[#4f4fa0]">
+						<p className="mt-4 text-3xl md:text-5xl uppercase font-black tracking-tighter text-[#4f4fa0]">
 							Software Engineer
 						</p>
 
