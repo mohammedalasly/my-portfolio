@@ -40,7 +40,7 @@ const Navbar = ({ activeSection, darkMode, toggleDarkMode }) => {
 						className="bg-(--bg-surface) border-2 border-(--color-border) rounded p-1 
 						neo-shadow transition-transform active:translate-y-0"
 					>
-						<img src="./bee.svg" alt="bee" className="w-10 h-10" />
+						<img src="./bee.svg" alt="bee" className="w-8 h-8 md:w-10 md:h-10" />
 					</button>
 
 					{/* Desktop Nav */}
