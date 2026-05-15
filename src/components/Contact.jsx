@@ -209,7 +209,7 @@ const Contact = () => {
 						disabled={isSubmitting}
 						className="mt-6 w-full flex items-center justify-center gap-2 bg-(--color-typography) 
 						text-(--bg-surface) border-2 border-(--color-border) rounded py-4 font-black 
-						tracking-widest text-lg neo-shadow hover:translate-x-1 hover:translate-y-1 
+						text-lg neo-shadow hover:translate-x-1 hover:translate-y-1 
 						hover:shadow-none transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed 
 						disabled:translate-x-0 disabled:translate-y-0 disabled:shadow-(--neo-shadow-lg)"
 					>
