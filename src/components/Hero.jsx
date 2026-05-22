@@ -2,11 +2,11 @@ import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa"
 
 const Hero = () => {
 	return (
-		<div className="w-full relative z-10 pt-10 pb-20">
+		<div className="w-full relative z-10 pt-20 pb-20">
 			{/* ── Cover Image ── */}
 			<div
-				className="w-full h-48 sm:h-64 md:h-120 relative overflow-hidden 
-			border-b-4 border-(--color-border) rounded neo-shadow-lg reveal-right"
+				className="w-full h-40 sm:h-54 md:h-65 lg:h-100 relative overflow-hidden 
+    border-(--color-border) rounded neo-shadow-lg reveal-right"
 			>
 				<img
 					src="/cover.jpg"
@@ -20,31 +20,33 @@ const Hero = () => {
 
 			{/* Main Content Area */}
 			<div className="w-full px-5 sm:px-8 md:px-12 lg:px-20">
-				<div className="flex flex-col md:flex-row md:justify-between gap-5">
-					<div className="flex flex-col items-start reveal-left">
-						{/* Avatar */}
-						<div
-							className="relative -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-32 mb-6 border-(--color-border) 
-						rounded neo-shadow-lg"
-						>
-							<img
-								src="/mo.png"
-								alt="mo"
-								loading="eager"
-								fetchpriority="high"
-								className="w-40 md:w-70 h-40 md:h-70 rounded object-cover"
-							/>
-						</div>
+				<div className="flex flex-col md:flex-row md:justify-between md:items-end gap-5">
+					{/* Avatar */}
+					<div
+						className="shrink-0 relative -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-32 self-start
+      border-(--color-border) rounded neo-shadow-lg reveal-left"
+					>
+						<img
+							src="/mo.png"
+							alt="mo"
+							loading="eager"
+							fetchpriority="high"
+							className="w-32 sm:w-40 md:w-56 lg:w-64 aspect-square rounded object-cover"
+						/>
 					</div>
 
-					<div className="flex flex-col items-start md:items-end text-left md:text-right md:mt-8 reveal">
+					{/* Name / Role / Actions */}
+					<div className="flex flex-col items-start md:items-end text-left md:text-right md:mt-8 reveal min-w-0">
 						<h1
-							className="text-5xl sm:text-5xl md:text-6xl xl:text-7xl font-black uppercase 
-						tracking-tighter text-(--color-typography) leading-none"
+							className="font-black uppercase tracking-tighter text-(--color-typography) leading-none"
+							style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
 						>
 							Mohammad Alasli
 						</h1>
-						<p className="mt-4 text-3xl md:text-5xl uppercase font-black tracking-tighter text-[#4f4fa0]">
+						<p
+							className="mt-2 uppercase font-black tracking-tighter text-[#4f4fa0]"
+							style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
+						>
 							Software Engineer
 						</p>
 
@@ -56,7 +58,7 @@ const Hero = () => {
 								mt-6 flex items-center gap-2 rounded
 								bg-(--btn-bg) text-(--bg-main)
 								border-2 border-(--color-border)
-								px-6 py-3 font-black uppercase tracking-wider text-sm
+								px-3.5 py-3 font-black uppercase text-sm
 								neo-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all
 								self-start md:self-end
 							"
@@ -71,20 +73,20 @@ const Hero = () => {
 								href="https://github.com/mohammedalasly"
 								target="_blank"
 								aria-label="GitHub"
-								className="bg-[#0d3b66] border-2 border-(--color-border) p-3 rounded neo-shadow
+								className="bg-[#0d3b66] border-2 border-(--color-border) p-1.5 rounded neo-shadow
 								hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
 							>
-								<FaGithub size={22} className="text-white" />
+								<FaGithub size={24} className="text-white" />
 							</a>
 
 							<a
 								href="https://www.linkedin.com/in/mohammedalasli/"
 								target="_blank"
 								aria-label="LinkedIn"
-								className="bg-[#3a86ff] border-2 border-(--color-border) p-3 rounded neo-shadow
+								className="bg-[#3a86ff] border-2 border-(--color-border) p-1.5 rounded neo-shadow
 								hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
 							>
-								<FaLinkedin size={22} className="text-white" />
+								<FaLinkedin size={24} className="text-white" />
 							</a>
 						</div>
 					</div>

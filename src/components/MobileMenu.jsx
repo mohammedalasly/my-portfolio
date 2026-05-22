@@ -47,17 +47,17 @@ const MobileMenu = ({
 				</div>
 
 				{/* Nav Items */}
-				<nav className="flex flex-col p-6 space-y-4">
+				<nav className="flex flex-col p-4 space-y-4">
 					{navItems.map(({ id, label }) => (
 						<button
 							key={id}
 							onClick={() => onNavClick(id)}
-							className={`flex items-center gap-3 text-left text-lg font-black 
-								tracking-wider transition-all p-3 border-2 rounded-md neo-shadow ${
-									activeSection === id
-										? "nav-link-active translate-x-2"
-										: "border-(--color-border) hover:translate-x-1"
-								}`}
+							className={`flex items-center gap-3 text-left text-lg 
+								 transition-all p-3 border-2 rounded-md neo-shadow ${
+										activeSection === id
+											? "nav-link-active translate-x-2"
+											: "border-(--color-border) hover:translate-x-1"
+									}`}
 						>
 							{label}
 						</button>
@@ -65,33 +65,33 @@ const MobileMenu = ({
 				</nav>
 
 				{/* Social Links */}
-				<div className="flex justify-start gap-3 px-6 pb-6">
+				<div className="flex justify-start gap-3 px-4 pb-4">
 					<a
 						href="#"
 						aria-label="GitHub"
 						onClick={onClose}
-						className="bg-[#0d3b66] border-2 border-white p-3 
+						className="bg-[#0d3b66] border-2 p-1.5 border-(--color-border)
 						rounded-md neo-shadow hover:translate-x-1 hover:translate-y-1 
 						hover:shadow-none transition-all"
 					>
-						<FaGithub size={20} className="text-white" />
+						<FaGithub size={26} className="text-white" />
 					</a>
 					<a
 						href="#"
 						aria-label="LinkedIn"
 						onClick={onClose}
-						className="bg-[#3e7aba] border-2 border-white p-3 rounded-md 
+						className="bg-[#3e7aba] border-2 p-1.5 border-(--color-border) rounded-md 
 						neo-shadow hover:translate-x-1 hover:translate-y-1 
 						hover:shadow-none transition-all"
 					>
-						<FaLinkedin size={20} className="text-white" />
+						<FaLinkedin size={26} className="text-white" />
 					</a>
 				</div>
 
 				{/* Footer Note */}
-				<div className="px-6 pb-6 pt-4 border-t-2 border-(--color-border)">
+				<div className="px-4 pb-6 pt-4 border-t-2 border-(--color-border)">
 					<p
-						className="text-xs font-bold text-center 
+						className="text-xs
 					opacity-60 text-(--color-typography)"
 					>
 						© {new Date().getFullYear()} Mohammad Alasli. All rights reserved

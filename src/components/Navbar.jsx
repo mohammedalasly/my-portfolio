@@ -55,7 +55,7 @@ const Navbar = ({ activeSection, darkMode, toggleDarkMode }) => {
 								className={`px-4 py-1 font-bold transition-all border-2 ${
 									activeSection === id
 										? "nav-link-active"
-										: "border-transparent text-(--color-typography) hover:border-(--color-border)"
+										: "border-transparent text-(--color-typography) hover:rounded-md hover:border-(--color-border)"
 								}`}
 							>
 								{label}
