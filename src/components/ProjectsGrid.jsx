@@ -26,9 +26,9 @@ const ProjectsGrid = () => (
 							src={project.image}
 							alt={project.title}
 							className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 
-							grayscale group-hover:grayscale-0"
+        md:grayscale md:group-hover:grayscale-0"
 						/>
-						<div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+						<div className="absolute inset-0 group-hover:bg-transparent transition-colors" />
 					</div>
 
 					{/* Content */}
