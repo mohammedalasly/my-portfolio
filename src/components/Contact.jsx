@@ -140,7 +140,7 @@ const Contact = () => {
 									submitStatus === "success" ? "./happy.svg" : "./nervous.svg"
 								}
 								alt={submitStatus === "success" ? "happy" : "nervous"}
-								className="w-22 h-22 shrink-0"
+								className="w-16 h-16 md:w-22 md:h-22 shrink-0"
 							/>
 							<p className="text-base text-(--status-msg) font-semibold">
 								{submitStatus === "success"
